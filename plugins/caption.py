@@ -67,8 +67,8 @@ async def caption(client, message: Message):
         if Q:
             q = f"\n🔷کیفیت: {Q}"
         if E:
-            await message.edit(f"♨️سریال: {n} \n👌قسمت: {e} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+            await message.edit(f"♨️سریال: ({n}) \n👌قسمت: {e} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         else:
-            await message.edit(f"♨️فیلم: {n} {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+            await message.edit(f"♨️فیلم: ({n}) {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         
    
