@@ -77,8 +77,9 @@ async def caption(client, message: Message):
             U = D.split("19")[1]
             K = U.split()[0]
             Y = '19' + f"{K}"
-        if Y:
-            YR = f"\n👌سال: {Y}"
+        w = Y
+        if w:
+            YR = f"\n👌سال: {w}"
         else:
             YR = f"\n👌سال:"
         if Q:
@@ -86,4 +87,4 @@ async def caption(client, message: Message):
         if E:
             await message.edit(f"♨️سریال: ({n}) \n👌قسمت: {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         else:
-            await message.edit(f"♨️فیلم: ({f} {Y}) {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+            await message.edit(f"♨️فیلم: ({f} {w}) {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
