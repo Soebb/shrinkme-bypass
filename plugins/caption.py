@@ -9,7 +9,8 @@ async def caption(client, message: Message):
         m = media.file_name
         D = m.replace("720P", " ").replace("E20", " ").replace("E120", " ").replace("E220", " ")
         N = m.replace("@dlmacvin2 -", " ").replace("@dlmacvin -", " ")
-        if "E" in m:
+        ep = ("E0" or "E1" or "E2" or "E3" or "E4" or "E5" or "E6" or "E7" or "E8" or "E9")
+        if ep in m:
             if '720P' in m:
                 Q = '720'
             if '480P' in m:
