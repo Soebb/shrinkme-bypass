@@ -19,7 +19,7 @@ async def caption(client, message: Message):
             Q = '1080'
         if '240P' in m:
             Q = '240'
-        N = m.replace("@dlmacvin2 -", " ")
+        N = m.replace("@dlmacvin2 -", " ").replace("@dlmacvin -", " ")
         if ep in N.split()[1]:
             E = N.split()[1]
         if ep in N.split()[2]:
@@ -40,4 +40,11 @@ async def caption(client, message: Message):
             E = N.split()[9]
         e = E.replace("E", " ")
         n = N.split(f"{E}")[0]
-        await message.edit(
+        if Q:
+            q = f"\n🔷کیفیت: {Q}"
+        if E:
+            await message.edit(f"♨️سریال: {n} \n👌قسمت: {e} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+        else:
+            await message.edit(f"♨️سریال: {n} \n👌قسمت: {e} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+        
+   
