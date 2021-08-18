@@ -1,7 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
-import re
 
 @Client.on_message(filters.media & filters.channel)
 async def caption(client, message: Message):
@@ -10,10 +9,7 @@ async def caption(client, message: Message):
         m = media.file_name
         D = m.replace("720P", " ").replace("E20", " ").replace("E120", " ").replace("E220", " ")
         N = m.replace("@dlmacvin2 -", " ").replace("@dlmacvin -", " ")
-        pattern = '^E(0|1|2|3|4|5|6|7|8|9)'
-        input = f'{N}'
-        result = re.match(pattern, input)
-        if result:
+        if N.__contains__("E0") or N.__contains__("E1") or N.__contains__("E2") or N.__contains__("E3") or N.__contains__("E4") or N.__contains__("E5") or N.__contains__("E6") or N.__contains__("E7") or N.__contains__("E8") or N.__contains__("E9"):  
             if '720P' in m:
                 Q = '720'
             if '480P' in m:
