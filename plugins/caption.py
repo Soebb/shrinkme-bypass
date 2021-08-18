@@ -1,6 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
+import re
 
 @Client.on_message(filters.media & filters.channel)
 async def caption(client, message: Message):
@@ -9,8 +10,10 @@ async def caption(client, message: Message):
         m = media.file_name
         D = m.replace("720P", " ").replace("E20", " ").replace("E120", " ").replace("E220", " ")
         N = m.replace("@dlmacvin2 -", " ").replace("@dlmacvin -", " ")
-        ep = ("E0" or "E1" or "E2" or "E3" or "E4" or "E5" or "E6" or "E7" or "E8" or "E9")
-        if ep in m:
+        pattern = 'E(0|1|2|3|4|5|6|7|8|9)'
+        input = f'{m}'
+        result = re.match(pattern, input)
+        if result:
             if '720P' in m:
                 Q = '720'
             if '480P' in m:
@@ -71,7 +74,7 @@ async def caption(client, message: Message):
                 T = O.split()[0]
                 E = '9' + f"{T}"
                 n = N.split("E9")[0]
-            await message.edit(f"♨️سریال: ({n}) \n👌قسمت: {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+            await message.edit(f"♨️سریال: ({n}) بازیرنویس چسبیده \n👌قسمت: {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         else:
             if "20" in D:
                 f = D.split("20")[0]
