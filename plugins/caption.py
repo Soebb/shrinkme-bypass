@@ -20,46 +20,111 @@ async def caption(client, message: Message):
         if '240P' in m:
             Q = '240'
         N = m.replace("@dlmacvin2 -", " ").replace("@dlmacvin -", " ")
-        if ep in N.split()[1]:
-            E = N.split()[1]
-        if ep in N.split()[2]:
-            E = N.split()[2]
-        if ep in N.split()[3]:
-            E = N.split()[3]
-        if ep in N.split()[4]:
-            E = N.split()[4]
-        if ep in N.split()[5]:
-            E = N.split()[5]
-        if ep in N.split()[6]:
-            E = N.split()[6]
-        if ep in N.split()[7]:
-            E = N.split()[7]
-        if ep in N.split()[8]:
-            E = N.split()[8]
-        if ep in N.split()[9]:
-            E = N.split()[9]
+        l = N.split(' ')
+        if len(l) == 2:
+            if ep in N.split()[1]:
+                E = N.split()[1]
+        if len(l) == 3:
+            if ep in N.split()[1]:
+                E = N.split()[1]
+            if ep in N.split()[2]:
+                E = N.split()[2]
+        if len(l) == 4:
+            if ep in N.split()[1]:
+                E = N.split()[1]
+            if ep in N.split()[2]:
+                E = N.split()[2]
+            if ep in N.split()[3]:
+                E = N.split()[3]
+        if len(l) == 5:
+            if ep in N.split()[1]:
+                E = N.split()[1]
+            if ep in N.split()[2]:
+                E = N.split()[2]
+            if ep in N.split()[3]:
+                E = N.split()[3]
+            if ep in N.split()[4]:
+                E = N.split()[4]
+        if len(l) == 6:
+            if ep in N.split()[1]:
+                E = N.split()[1]
+            if ep in N.split()[2]:
+                E = N.split()[2]
+            if ep in N.split()[3]:
+                E = N.split()[3]
+            if ep in N.split()[4]:
+                E = N.split()[4]
+            if ep in N.split()[5]:
+                E = N.split()[5]
+        if len(l) == 7:
+            if ep in N.split()[1]:
+                E = N.split()[1]
+            if ep in N.split()[2]:
+                E = N.split()[2]
+            if ep in N.split()[3]:
+                E = N.split()[3]
+            if ep in N.split()[4]:
+                E = N.split()[4]
+            if ep in N.split()[5]:
+                E = N.split()[5]
+            if ep in N.split()[6]:
+                E = N.split()[6]
+        if len(l) == 8:
+            if ep in N.split()[1]:
+                E = N.split()[1]
+            if ep in N.split()[2]:
+                E = N.split()[2]
+            if ep in N.split()[3]:
+                E = N.split()[3]
+            if ep in N.split()[4]:
+                E = N.split()[4]
+            if ep in N.split()[5]:
+                E = N.split()[5]
+            if ep in N.split()[6]:
+                E = N.split()[6]
+            if ep in N.split()[7]:
+                E = N.split()[7]
+       if len(l) == 9:
+            if ep in N.split()[1]:
+                E = N.split()[1]
+            if ep in N.split()[2]:
+                E = N.split()[2]
+            if ep in N.split()[3]:
+                E = N.split()[3]
+            if ep in N.split()[4]:
+                E = N.split()[4]
+            if ep in N.split()[5]:
+                E = N.split()[5]
+            if ep in N.split()[6]:
+                E = N.split()[6]
+            if ep in N.split()[7]:
+                E = N.split()[7]
+            if ep in N.split()[8]:
+                E = N.split()[8]
+        if len(l) == 10:
+            if ep in N.split()[1]:
+                E = N.split()[1]
+            if ep in N.split()[2]:
+                E = N.split()[2]
+            if ep in N.split()[3]:
+                E = N.split()[3]
+            if ep in N.split()[4]:
+                E = N.split()[4]
+            if ep in N.split()[5]:
+                E = N.split()[5]
+            if ep in N.split()[6]:
+                E = N.split()[6]
+            if ep in N.split()[7]:
+                E = N.split()[7]
+            if ep in N.split()[8]:
+                E = N.split()[8]
+  
         e = E.replace("E", " ")
         n = N.split(f"{E}")[0]
-        y = N.replace("720P", " ")
-        Yr = "20" or "19"
-        if Yr in y.split()[1]:
-            Y = y.split()[1]
-        if Yr in y.split()[2]:
-            Y = y.split()[2]
-        if Yr in y.split()[3]:
-            Y = y.split()[3]
-        if Yr in y.split()[4]:
-            Y = y.split()[4]
-        if Yr in y.split()[5]:
-            Y = y.split()[5]
-        if Yr in y.split()[6]:
-            Y = y.split()[6]
-        if Yr in y.split()[7]:
-            Y = y.split()[7]
-        if Yr in y.split()[8]:
-            Y = y.split()[8]
-        if Yr in y.split()[9]:
-            Y = y.split()[9]
+        if not E:
+            f = m.split("-")[0]
+            y = m.split("-")[1]
+            Y = y.split()[0]
         if Y:
             YR = f"\n👌سال: {Y}"
         else:
@@ -69,6 +134,6 @@ async def caption(client, message: Message):
         if E:
             await message.edit(f"♨️سریال: ({n}) \n👌قسمت: {e} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         else:
-            await message.edit(f"♨️فیلم: ({n} {Y}) {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+            await message.edit(f"♨️فیلم: ({f} {Y}) {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         
    
