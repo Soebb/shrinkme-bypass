@@ -1,8 +1,5 @@
-import os
-from config import Config
-
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
+from pyrogram.types import Message
 from pyrogram.errors import FloodWait
 
 @Client.on_message(filters.media & filters.channel)
@@ -84,7 +81,7 @@ async def caption(client, message: Message):
                 E = N.split()[6]
             if ep in N.split()[7]:
                 E = N.split()[7]
-       if len(l) == 9:
+        if len(l) == 9:
             if ep in N.split()[1]:
                 E = N.split()[1]
             if ep in N.split()[2]:
@@ -143,5 +140,3 @@ async def caption(client, message: Message):
             await message.edit(f"♨️سریال: ({n}) \n👌قسمت: {e} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         else:
             await message.edit(f"♨️فیلم: ({f} {Y}) {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
-        
-   
