@@ -118,9 +118,9 @@ async def caption(client, message: Message):
                 E = N.split()[7]
             if ep in N.split()[8]:
                 E = N.split()[8]
-  
-        e = E.replace("E", " ")
-        n = N.split(f"{E}")[0]
+        if E:
+            e = E.replace("E", " ")
+            n = N.split(f"{E}")[0]
         if not E:
             D = m.replace("720P", " ")
             if "20" in D:
