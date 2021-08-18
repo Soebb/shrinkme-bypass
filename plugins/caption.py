@@ -66,18 +66,17 @@ async def caption(client, message: Message):
             T = O.split()[0]
             E = '9' + f"{T}"
             n = N.split("E9")[0]
-        if not E:
-            D = m.replace("720P", " ")
-            if "20" in D:
-                f = D.split("20")[0]
-                U = D.split("20")[1]
-                K = U.split()[0]
-                Y = '20' + f"{K}"
-            if "19" in D:
-                f = D.split("19")[0]
-                U = D.split("19")[1]
-                K = U.split()[0]
-                Y = '19' + f"{K}"
+        D = m.replace("720P", " ").replace("E20", " ").replace("E120", " ").replace("E220", " ")
+        if "20" in D:
+            f = D.split("20")[0]
+            U = D.split("20")[1]
+            K = U.split()[0]
+            Y = '20' + f"{K}"
+        if "19" in D:
+            f = D.split("19")[0]
+            U = D.split("19")[1]
+            K = U.split()[0]
+            Y = '19' + f"{K}"
         if Y:
             YR = f"\n👌سال: {Y}"
         else:
