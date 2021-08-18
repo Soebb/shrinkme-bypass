@@ -87,6 +87,8 @@ async def caption(client, message: Message):
                 YR = f"\n👌سال: {Y}"
             W = "20" or "19"
             if not W in D:
+                P = m.split("0P")[0]
+                f = P.replace("72", " ").replace.("48", " ").replace("108", " ").replace("24", " ")
                 YR = f"\n👌سال:"
             if '720P' in m:
                 Q = '720'
