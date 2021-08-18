@@ -6,11 +6,10 @@ from pyrogram.errors import FloodWait
 async def caption(client, message: Message):
     media = message.video or message.document
     if (media is not None) and (media.file_name is not None):
-        ep = 'E0' or 'E1' or 'E2'
         m = media.file_name
         D = m.replace("720P", " ").replace("E20", " ").replace("E120", " ").replace("E220", " ")
         N = m.replace("@dlmacvin2 -", " ").replace("@dlmacvin -", " ")
-        if ep in m:
+        if "E" in m:
             if '720P' in m:
                 Q = '720'
             if '480P' in m:
