@@ -10,16 +10,30 @@ async def caption(client, message: Message):
     media = message.audio or message.video or message.document or message.animation
     if (media is not None) and (media.file_name is not None):
         m = media.file_name
-        epi = m.split(None
         ep = "E1" or "E2" or "E3" or "E4" or "E5" or "E6" or "E7" or "E8" or "E9"
+        if ep in m.split()[3]:
+            E = m.split()[3]
+        if ep in m.split()[4]:
+            E = m.split()[4]
+        if ep in m.split()[5]:
+            E = m.split()[5]
+        if ep in m.split()[6]:
+            E = m.split()[6]
+        if ep in m.split()[7]:
+            E = m.split()[7]
+        if ep in m.split()[8]:
+            E = m.split()[8]
+        if ep in m.split()[9]:
+            E = m.split()[9]
+        e = E.replace("E", " ")
         if '720P' in m:
-            y = '720'
+            Q = '720'
         if '480P' in m:
-            y = '480'
+            Q = '480'
         if '1080P' in m:
-            y = '1080'
+            Q = '1080'
         if '240P' in m:
-            y = '240'
+            Q = '240'
 
 
     await message.edit(
