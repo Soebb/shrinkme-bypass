@@ -79,10 +79,11 @@ async def caption(client, message: Message):
                 fa += "#اهل_ماراش"
 
             if "Sibe Mamnooe" in n:
-                fa += "سیب ممنوعه"
+                fa += "#سیب_ممنوعه"
 
             if not "Hard-Sub" in N:
-                await message.edit(f"🔺 {fa} قسمت{E} \n🔹 دوبله فارسی {q} \n🆔👉 @dlmacvin_new | {fa}#")
+                H = fa.replace("_", " ").replace("#", " ")
+                await message.edit(f"🔺 {H} قسمت{E} \n🔹 دوبله فارسی {q} \n🆔👉 @dlmacvin_new | {fa}#")
             else:
                 await message.edit(f"♨️ سریال{fa} ({n}) بازیرنویس چسبیده\n👌قسمت: {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         else:
@@ -113,5 +114,6 @@ async def caption(client, message: Message):
             if '240P' in m:
                 Q = '240'
             if Q:
-                q = f"\n🔷کیفیت: {Q}"
+                G = f"\n🔷کیفیت: {Q}"
+                q = G.replace(".1", " ").replace(".mkv", " ")
             await message.edit(f"♨️فیلم ({f} {Y}) بازیرنویس چسبیده {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
