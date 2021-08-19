@@ -70,10 +70,14 @@ async def caption(client, message: Message):
                 T = O.split()[0]
                 E = '9' + f"{T}"
                 n = N.split("E9")[0]
+        fa = " "
+
         if "Sen Cal Kapimi" in n:
-            fa = '#تو_در_خانه_ام_را_بزن'
-        else:
-            pass
+            fa += "#تو_در_خانه_ام_را_بزن"
+
+        if "Marasli" in n:
+            fa += "#اهل_ماراش"
+
             await message.edit(f"♨️سریال: {fa} ({n}) بازیرنویس چسبیده \n👌قسمت: {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         else:
             if "20" in D:
