@@ -101,7 +101,6 @@ async def caption(client, message: Message):
                 YR = f"\n👌سال: {Y}"
             W = "20" or "19"
             if not W in D:
-                Y = " "
                 P = m.split("0P")[0]
                 f = P.replace("72", " ").replace("48", " ").replace("108", " ").replace("24", " ")
                 YR = f"\n👌سال:"
@@ -116,4 +115,4 @@ async def caption(client, message: Message):
             if Q:
                 G = f"\n🔹کیفیت: {Q}"
                 q = G.replace(".1", " ").replace(".mkv", " ")
-            await message.edit(f"♨️فیلم ({f} {Y}) بازیرنویس چسبیده {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+            await message.edit(f"♨️ فیلم ({f}) بازیرنویس چسبیده {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
