@@ -78,7 +78,7 @@ async def caption(client, message: Message):
             if "Marasli" in n:
                 fa += "#اهل_ماراش"
 
-             if "Sibe Mamnooe" in n:
+            if "Sibe Mamnooe" in n:
                 fa += "سیب ممنوعه"
 
             if not "Hard-Sub" in N:
