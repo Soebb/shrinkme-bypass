@@ -20,7 +20,7 @@ async def caption(client, message: Message):
             if '240P' in m:
                 Q = '240'
             if Q:
-                q = f"\n🔷کیفیت: {Q}"
+                q = f"\n🔹کیفیت: {Q}"
             if 'E0' in N:
                 O = N.split("E0")[1]
                 T = O.split()[0]
@@ -114,6 +114,6 @@ async def caption(client, message: Message):
             if '240P' in m:
                 Q = '240'
             if Q:
-                G = f"\n🔷کیفیت: {Q}"
+                G = f"\n🔹کیفیت: {Q}"
                 q = G.replace(".1", " ").replace(".mkv", " ")
             await message.edit(f"♨️فیلم ({f} {Y}) بازیرنویس چسبیده {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
