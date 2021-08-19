@@ -6,11 +6,46 @@ from pyrogram.errors import FloodWait
 async def caption(client, message: Message):
     media = message.video or message.document
     if (media is not None) and (media.file_name is not None):
-        m = media.file_name
-        D = m.replace("720P", " ").replace("E20", " ").replace("E120", " ").replace("E220", " ")
+        m = media.file_name.replace("Fragmanı", " ").replace("Fragmanlarım", " ").replace("ı", "i").replace("İ", "I").replace("ö", "o").replace("Ö", "O").replace("Ü", "U").replace("ü", "u").replace("ë", "e").replace("Ë", "E").replace("Ä", "A").replace("ç", "c").replace("Ç", "C").replace("ş", "s").replace("Ş", "S").replace("ğ", "g").replace("Ğ", "G").replace("ä", "a")
+        D = m.replace("720P", " ").replace("E20", " ").replace("E120", " ").replace("E220", " ").replace("E320", " ")
         N = m.replace("@dlmacvin2 -", " ").replace("@dlmacvin -", " ")
-        if N.__contains__("E0") or N.__contains__("E1") or N.__contains__("E2") or N.__contains__("E3") or N.__contains__("E4") or N.__contains__("E5") or N.__contains__("E6") or N.__contains__("E7") or N.__contains__("E8") or N.__contains__("E9"):
-            fa = " "
+        Z = media.file_name
+        fa = " "
+        X = " "
+        tz = " "
+
+        if "Sen Cal Kapimi" in m:
+            fa += "#تو_در_خانه_ام_را_بزن"
+            X += "Sen Cal Kapimi"
+        if "Marasli" in m:
+            fa += "#اهل_ماراش"
+            X += "Marasli"
+        if "Sibe Mamnooe" in m:
+            fa += "#سیب_ممنوعه"
+            X += "Sibe Mamnooe"
+
+        if Z.__contains__("Fragman"):
+            Jn = m.split("Bolum")[1]
+            if "2" in Jn:
+                tz += "#دوم"
+            elif "1" in Jn:
+                tz += "#اول"
+            elif "3" in Jn:
+                tz += "#سوم"
+            elif "4" in Jn:
+                tz += "#چهارم"
+            elif "5" in Jn:
+                tz += "#پنجم"
+            elif "6" in Jn:
+                tz += "#ششم"
+            if X.__contains__("a") or X.__contains__("o") or X.__contains__("i") or X.__contains__("c") or X.__contains__("b") or X.__contains__("e") or X.__contains__("l") or X.__contains__("n") or X.__contains__("m"):
+                V = m.split("Bolum")[0]
+                E = V.split(f"{X}", -1)[0]
+            else:
+                E = ""
+            Tzz = tz.replace("#", " ")
+            await message.edit(f"⬇️ تیزر{Tzz} قسمت {E} {fa} بازیرنویس چسبیده\n🆔👉 @dlmacvin_new")
+        if (media.file_size > 50) and N.__contains__("E0") or N.__contains__("E1") or N.__contains__("E2") or N.__contains__("E3") or N.__contains__("E4") or N.__contains__("E5") or N.__contains__("E6") or N.__contains__("E7") or N.__contains__("E8") or N.__contains__("E9"):
             if '720P' in m:
                 Q = '720'
             if '480P' in m:
@@ -20,7 +55,9 @@ async def caption(client, message: Message):
             if '240P' in m:
                 Q = '240'
             if Q:
-                q = f"\n🔹کیفیت: {Q}"
+                q = f"\n🔹کیفیت : {Q}"
+            else:
+                q = ""
             if 'E0' in N:
                 O = N.split("E0")[1]
                 T = O.split()[0]
@@ -71,39 +108,29 @@ async def caption(client, message: Message):
                 T = O.split()[0]
                 E = '9' + f"{T}"
                 n = N.split("E9")[0]
-        
-            if "Sen Cal Kapimi" in n:
-                fa += "#تو_در_خانه_ام_را_بزن"
-
-            if "Marasli" in n:
-                fa += "#اهل_ماراش"
-
-            if "Sibe Mamnooe" in n:
-                fa += "#سیب_ممنوعه"
-
             if not "Hard-Sub" in N:
                 H = fa.replace("_", " ").replace("#", " ")
                 await message.edit(f"🔺{H} قسمت {E} \n🔸 دوبله فارسی {q} \n🆔👉 @dlmacvin_new | {fa}")
             else:
-                await message.edit(f"♨️ سریال{fa} ({n}) بازیرنویس چسبیده\n👌قسمت: {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
-        else:
+                await message.edit(f"♨️ سریال{fa} ({n}) بازیرنویس چسبیده\n👌قسمت : {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+        elif (media.file_size > 50) and not N.__contains__("E0") or N.__contains__("E1") or N.__contains__("E2") or N.__contains__("E3") or N.__contains__("E4") or N.__contains__("E5") or N.__contains__("E6") or N.__contains__("E7") or N.__contains__("E8") or N.__contains__("E9"):
             if "20" in D:
                 f = D.split("20")[0]
                 U = D.split("20")[1]
                 K = U.split()[0]
                 Y = '20' + f"{K}"
-                YR = f"\n👌سال: {Y}"
+                YR = f"\n👌سال : {Y}"
             if "19" in D:
                 f = D.split("19")[0]
                 U = D.split("19")[1]
                 K = U.split()[0]
                 Y = '19' + f"{K}"
-                YR = f"\n👌سال: {Y}"
+                YR = f"\n👌سال : {Y}"
             W = "20" or "19"
             if not W in D:
                 P = m.split("0P")[0]
                 f = P.replace("72", " ").replace("48", " ").replace("108", " ").replace("24", " ")
-                YR = f"\n👌سال:"
+                YR = f"\n👌سال :"
             if '720P' in m:
                 Q = '720'
             if '480P' in m:
@@ -113,6 +140,8 @@ async def caption(client, message: Message):
             if '240P' in m:
                 Q = '240'
             if Q:
-                G = f"\n🔹کیفیت: {Q}"
+                G = f"\n🔹کیفیت : {Q}"
                 q = G.replace(".1", " ").replace(".mkv", " ")
-            await message.edit(f"♨️ فیلم ({f}) بازیرنویس چسبیده {YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+            else:
+                q = ""
+            await message.edit(f"♨️ فیلم {f} بازیرنویس چسبیده{YR} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
