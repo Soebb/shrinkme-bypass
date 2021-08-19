@@ -8,7 +8,7 @@ async def caption(client, message: Message):
     if (media is not None) and (media.file_name is not None):
         m = media.file_name.replace("Fragmanı", " ").replace("Fragmanlarım", " ").replace("ı", "i").replace("İ", "I").replace("ö", "o").replace("Ö", "O").replace("Ü", "U").replace("ü", "u").replace("ë", "e").replace("Ë", "E").replace("Ä", "A").replace("ç", "c").replace("Ç", "C").replace("ş", "s").replace("Ş", "S").replace("ğ", "g").replace("Ğ", "G").replace("ä", "a")
         D = m.replace("720P", " ").replace("E20", " ").replace("E120", " ").replace("E220", " ").replace("E320", " ")
-        N = m.replace("@dlmacvin2 -", " ").replace("@dlmacvin -", " ")
+        N = m.replace("@dlmacvin2 -", "").replace("@dlmacvin -", "")
         Z = media.file_name
         fa = " "
         X = " "
@@ -112,7 +112,10 @@ async def caption(client, message: Message):
                 H = fa.replace("_", " ").replace("#", " ")
                 await message.edit(f"🔺{H} قسمت {E} \n🔸 دوبله فارسی {q} \n🆔👉 @dlmacvin_new | {fa}")
             else:
-                await message.edit(f"♨️ سریال{fa} ({n}) بازیرنویس چسبیده\n👌قسمت : {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+                if message.video:
+                    await message.edit(f"♨️ سریال{fa} ( {n}) بازیرنویس چسبیده\n👌قسمت: {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
+                else:
+                    await message.edit(f"♨️ سریال{fa} ({n}) بازیرنویس چسبیده\n👌قسمت: {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         elif (media.file_size > 50) and not N.__contains__("E0") or N.__contains__("E1") or N.__contains__("E2") or N.__contains__("E3") or N.__contains__("E4") or N.__contains__("E5") or N.__contains__("E6") or N.__contains__("E7") or N.__contains__("E8") or N.__contains__("E9"):
             if "20" in D:
                 f = D.split("20")[0]
