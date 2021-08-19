@@ -83,7 +83,7 @@ async def caption(client, message: Message):
 
             if not "Hard-Sub" in N:
                 H = fa.replace("_", " ").replace("#", " ")
-                await message.edit(f"🔺 {H} قسمت{E} \n🔹 دوبله فارسی {q} \n🆔👉 @dlmacvin_new | {fa}#")
+                await message.edit(f"🔺{H} قسمت {E} \n🔸 دوبله فارسی {q} \n🆔👉 @dlmacvin_new | {fa}")
             else:
                 await message.edit(f"♨️ سریال{fa} ({n}) بازیرنویس چسبیده\n👌قسمت: {E} {q} \n🔻تماشای آنلاین بدون فیلتر شکن: \n🆔👉 @dlmacvin_new")
         else:
