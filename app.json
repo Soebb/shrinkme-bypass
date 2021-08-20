@@ -1,5 +1,6 @@
 {
   "name": "ChannelAutoCaption",
+  "stack": "heroku-20",
   "description": "Telegram auto channel caption bot.",
   "repository": "https://github.com/samadii/ChannelAutoCaption",
   "env": {
