@@ -17,6 +17,7 @@ async def caption(client, message: Message):
         if "Sen Cal Kapimi" in m:
             fa += "#تو_در_خانه_ام_را_بزن"
             X += "Sen Cal Kapimi"
+            Kh = m.replace("Sen Cal Kapimi", "")
         if "Marasli" in m:
             fa += "#اهل_ماراش"
             X += "Marasli"
@@ -41,13 +42,13 @@ async def caption(client, message: Message):
             if X.__contains__("a") or X.__contains__("o") or X.__contains__("i") or X.__contains__("c") or X.__contains__("b") or X.__contains__("e") or X.__contains__("l") or X.__contains__("n") or X.__contains__("m"):
                 Yd = X.replace(" ", "_")
                 Lo += f"#{Yd}"
-                V = m.split("Bolum")[0]
-                E = V.replace(".", "").replace(f"{X}", "")
+                V = Kh.split("Bolum")[0]
+                E = V.replace(".", "")
             else:
                 E = ""
             Tzz = tz.replace("#", "")
             date = "پنجشنبه ساعت 4 بامداد از رسانه اینترنتی دی ال مکوین"
-            await message.edit(f"⬇️ تیزر{Tzz} قسمت {E} ( {fa}) {Lo} ، بازیرنویس چسبیده\n\n🔻 پخش {date}\n\n🆔👉 @dlmacvin_new")
+            await message.edit(f"⬇️ تیزر{Tzz} قسمت {E} ({fa} ) {Lo} ، بازیرنویس چسبیده\n\n🔻 پخش {date}\n\n🆔👉 @dlmacvin_new")
         if (media.file_size > 50) and N.__contains__("E0") or N.__contains__("E1") or N.__contains__("E2") or N.__contains__("E3") or N.__contains__("E4") or N.__contains__("E5") or N.__contains__("E6") or N.__contains__("E7") or N.__contains__("E8") or N.__contains__("E9"):
             if '720P' in m:
                 Q = '720'
