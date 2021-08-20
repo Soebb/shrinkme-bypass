@@ -39,7 +39,8 @@ async def caption(client, message: Message):
             elif "6" in Jn:
                 tz += "#ششم"
             if X.__contains__("a") or X.__contains__("o") or X.__contains__("i") or X.__contains__("c") or X.__contains__("b") or X.__contains__("e") or X.__contains__("l") or X.__contains__("n") or X.__contains__("m"):
-                Lo += f"#{X}"
+                Yd = X.replace(" ", "_")
+                Lo += f"#{Yd}"
                 V = m.split("Bolum")[0]
                 Jg = V.split(f"{X}")[-1]
                 E = Jg.replace(".", "")
