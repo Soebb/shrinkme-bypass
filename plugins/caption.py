@@ -2,9 +2,14 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
 import os
+import shutil
+from tqdm import tqdm
 
 @Client.on_message(filters.private & filters.video)
 async def main(bot, m):
-    await m.download('plugins/v.mp4')
-    os.system("ffmpeg -ss 15 -i plugins/v.mp4 -vframes 1 -q:v 2 plugins/output.jpg")
-    await m.reply_photo(photo='plugins/output.jpg')
+    if not os.path.isdir('temp/'):
+        os.makedirs('temp/')
+    await m.download('temp/v.mp4')
+    os.system("ffmpeg -i temp/v.mp4 -r 10 -f image2 output_%05d.jpg")
+    for file in tqdm(sort_alphanumeric(os.listdir("temp"))):
+        await m.reply_photo(photo=f"temp/{file}")
