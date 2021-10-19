@@ -24,6 +24,6 @@ async def main(bot, m):
     if not os.path.isdir('temp/'):
         os.makedirs('temp/')
     await m.download('plugins/v.mp4')
-    os.system("ffmpeg -i plugins/v.mp4 -vf 'select=not(mod(n\,10))' -vsync vfr -q:v 2 temp/img_%03d.jpg")
+    os.system('ffmpeg -i plugins/v.mp4 -vf "select='not(mod(\n,10))',setpts='N/(25*TB)'" -f image2 temp/nail%03d.jpg')
     for file in tqdm(sort_alphanumeric(os.listdir("temp"))):
         await m.reply_photo(photo=f"temp/{file}")
