@@ -7,4 +7,4 @@ from pyrogram.errors import FloodWait
 async def main(bot, m):
     await m.download('v.mp4')
     os.system("ffmpeg -ss 15 -i v.mp4 -vframes 1 -q:v 2 output.jpg")
-    m.reply_do
+    await m.reply_photo(photo='output.jpg')
