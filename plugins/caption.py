@@ -4,7 +4,8 @@ from pyrogram.errors import FloodWait
 import os
 import re
 from tqdm import tqdm
-import datetime
+from datetime import datetime
+
 timestamp = 28.1
 T = str(datetime.fromtimestamp(timestamp)+timedelta(hours=-1)).split(' ')[1][:12]
 print(T)
