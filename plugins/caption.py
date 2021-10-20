@@ -7,10 +7,10 @@ from tqdm import tqdm
 from datetime import datetime
 from datetime import timedelta
 timestamp = 28.1
-T = str(datetime.fromtimestamp(timestamp)+timedelta(hours=-1)).split(' ')[1][:12]
+T = str(datetime.fromtimestamp(timestamp)+timedelta(hours=0)).split(' ')[1][:12]
 print(T)
 timestamp = 28
-H = str(datetime.fromtimestamp(timestamp)+timedelta(hours=-1)).split(' ')[1][:12]
+H = str(datetime.fromtimestamp(timestamp)+timedelta(hours=0)).split(' ')[1][:12]
 print(H)
 
 def sort_alphanumeric(data):
