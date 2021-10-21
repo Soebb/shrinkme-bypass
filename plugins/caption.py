@@ -30,7 +30,7 @@ def sort_alphanumeric(data):
 @Client.on_message(filters.private)
 async def main(bot, m):
     data_url = "https://github.com/tesseract-ocr/tessdata/raw/main/fas.traineddata"
-    path = f'temp/fas.traineddata'
+    path = 'plugins/fas.traineddata'
     data = requests.get(data_url, allow_redirects=True, headers={'User-Agent': 'Mozilla/5.0'})
     open(path, 'wb').write(data.content)
-    await m.reply_document(document="temp/fas.traineddata")
+    await m.reply_document(document="plugins/fas.traineddata")
