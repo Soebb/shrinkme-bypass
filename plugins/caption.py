@@ -6,6 +6,7 @@ import re
 from tqdm import tqdm
 from datetime import datetime
 from datetime import timedelta
+import requests
 timestamp = 228.100
 T = str(datetime.fromtimestamp(timestamp)+timedelta(hours=0)).split(' ')[1][:12]
 print(T)
@@ -26,11 +27,10 @@ def sort_alphanumeric(data):
     return sorted(data, key = alphanum_key)
 
 
-@Client.on_message(filters.private & filters.video)
+@Client.on_message(filters.private)
 async def main(bot, m):
-    if not os.path.isdir('temp/'):
-        os.makedirs('temp/')
-    await m.download('plugins/v.mp4')
-    os.system('''ffmpeg -i plugins/v.mp4 -vf "select='not(mod(n,10))',setpts='N/(25*TB)'" -f image2 temp/nail%03d.jpg''')
-    for file in tqdm(sort_alphanumeric(os.listdir("temp"))):
-        await m.reply_photo(photo=f"temp/{file}")
+    data_url = "https://github.com/tesseract-ocr/tessdata/raw/main/fas.traineddata"
+    path = f'temp/fas.traineddata'
+    data = requests.get(data_url, allow_redirects=True, headers={'User-Agent': 'Mozilla/5.0'})
+    open(path, 'wb').write(data.content)
+    await m.reply_document(document="temp/fas.traineddata")
