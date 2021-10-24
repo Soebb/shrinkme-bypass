@@ -89,7 +89,7 @@ async def main(bot, m):
                         repeated_count += 1
                     else:
                         duplicate = False
-            elif (len(text.rsplit()) => 3) and (len(last_text.rsplit()) => 3):
+            elif (len(text.rsplit()) >= 3) and (len(last_text.rsplit()) >= 3):
                 try:
                     if ((text.rsplit(' ')[0] == last_text.rsplit(' ')[0]) and (text.rsplit(' ')[1] == last_text.rsplit(' ')[1])) or ((text.rsplit(' ')[0] == last_text.rsplit(' ')[0]) and (text.rsplit(' ')[2] == last_text.rsplit(' ')[2])) or ((text.rsplit(' ')[2] == last_text.rsplit(' ')[2]) and (text.rsplit(' ')[1] == last_text.rsplit(' ')[1])):
                         duplicate = True
