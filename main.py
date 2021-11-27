@@ -49,7 +49,7 @@ async def start(bot, update):
 @Bot.on_message(filters.private & filters.video)
 async def main(bot, m):
     await m.download("temp/v1.mp4")
-    merge = await client.ask(m.chat.id,'ویدیویی که میخوای ادغام شه؟بفرس', filters=filters.video)
+    merge = await bot.ask(m.chat.id,'ویدیویی که میخوای ادغام شه؟بفرس', filters=filters.video)
     await bot.download_media(message=merge.video, file_name="temp/v2.mp4")
     os.system("mkvmerge -o temp/v3.mp4 temp/v1.mp4 +temp/v2.mp4")
     time.sleep(10)
