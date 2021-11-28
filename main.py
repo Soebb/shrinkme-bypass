@@ -5,6 +5,8 @@ import os, time
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+files_path = [os.path.abspath(x) for x in os.listdir("app")]
+print(files_path)
 if "BOT_TOKEN" in os.environ:
     BOT_TOKEN = os.environ.get("BOT_TOKEN")
     API_ID = os.environ.get("API_ID")
