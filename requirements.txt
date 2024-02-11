@@ -3,7 +3,7 @@ tgcrypto
 python-dotenv
 srt
 pytesseract
-cv2
+opencv-python
 imutils
 numpy
 tqdm
