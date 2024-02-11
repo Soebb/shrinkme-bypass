@@ -1,5 +1,10 @@
 pyrogram
 tgcrypto
-pyromod
-yt_dlp
+python-dotenv
+srt
+pytesseract
+cv2
+imutils
+numpy
+tqdm
 requests
