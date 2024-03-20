@@ -7,7 +7,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 if "BOT_TOKEN" in os.environ:
     BOT_TOKEN = os.environ.get("BOT_TOKEN")
-    API_ID = os.environ.get("API_ID")
+    API_ID = int(os.environ.get("API_ID"))
     API_HASH = os.environ.get("API_HASH")
 else:
     BOT_TOKEN = " "
