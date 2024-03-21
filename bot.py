@@ -26,7 +26,7 @@ def shrinkme(update, context):
     except: return update.message.reply_text("Something went wrong")
 
 
-def start(update: Update, context: CallbackContext) -> None:
+def start(update, context):
     """Send a message when the command /start is issued."""
     update.message.reply_text("Hi, I am shrinkme url bypass bot")
 
